@@ -1,12 +1,13 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import { DateInput } from '@/components/FormFields';
+import { WorldMap } from '@/components/WorldMap';
 
 export default function Home() {
   return (
     <>
       <h1>Page Traffic</h1>
+      <DateInput name="from" />
+      <DateInput name="to" />
+      <WorldMap />
     </>
   );
 }
