@@ -10,7 +10,9 @@ const rewriteEndpoints = [
 ];
 
 const nextConfig = {
+  pageExtensions: ['js', 'jsx'],
   reactStrictMode: true,
+  transpilePackages: ['react-simple-maps'],
   async rewrites() {
     return (env.toLowerCase() !== 'production') ? (
       rewriteEndpoints
