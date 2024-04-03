@@ -11,7 +11,7 @@ export const getServerSideProps = async ({ req }) => (
   }
 );
 
-const About = ({ router, headers }) => {
+const Index = ({ router, headers }) => {
   const {
     setRouter,
     setReqHeaders,
@@ -22,19 +22,29 @@ const About = ({ router, headers }) => {
     if (router.isReady) {
       setRouter(router)
       setReqHeaders(headers)
-      setPageId(2)
+      setPageId(1)
     }
   }, [router.isReady, setReqHeaders, setPageId, headers]);
 
   return (
     <>
-      <h1>About</h1>
+      <h1>Index</h1>
+
       <p>
         This is a test page. Viewing this page
         will fire a request to the backend.
       </p>
+
+      <ul>
+        <li>
+          <a href="/pages/about">About</a>
+        </li>
+        <li>
+          <a href="/pages/contact">Contact</a>
+        </li>
+      </ul>
     </>
   );
 };
 
-export default withRouter(About);
+export default withRouter(Index);
