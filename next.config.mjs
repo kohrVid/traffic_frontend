@@ -10,7 +10,7 @@ const rewriteEndpoints = [
 ];
 
 const nextConfig = {
-  pageExtensions: ['js', 'jsx'],
+  pageExtensions: ['jsx'],
   reactStrictMode: true,
   transpilePackages: ['react-simple-maps'],
   async rewrites() {
