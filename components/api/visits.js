@@ -1,5 +1,18 @@
 const controller = new AbortController()
 
+const allVisits = () => fetch(
+  '/api/visits',
+  {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'include',
+    signal: controller.signal,
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    }
+  }
+);
+
 const createVisit = (pageId, userId, ipAddress) => fetch(
   '/api/visits',
   {
@@ -21,4 +34,4 @@ const createVisit = (pageId, userId, ipAddress) => fetch(
   }
 );
 
-export { createVisit }
+export { allVisits, createVisit }

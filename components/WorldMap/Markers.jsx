@@ -1,25 +1,19 @@
 import { Marker } from 'react-simple-maps';
 
-export const Markers = () => {
-  const markers = [
-    {
-      markerOffset: 10,
-      name: "Buenos Aires",
-      coordinates: [-58.3816, -34.6037]
-    },
-  ];
-
+export const Markers = ({ visits }) => {
   return (
     <>
       {
-        markers.map(({ name, coordinates, markerOffset }) => (
-          <Marker key={name} coordinates={coordinates}>
-            <circle r={3} fill="#23b723" />
+        visits.map(({ latitude, longitude }, idx) => (
+          <Marker key={idx} coordinates={[longitude, latitude]}>
+            <circle r={5} fill="#23b723"
+              stroke="#fff"
+              strokeWidth={3}
+              strokeOpacity={0.5} />
             <text
               textAnchor="middle"
-              y={markerOffset}
+              y={10}
               style={{ fontFamily: "system-ui", fill: "#eaeaea" }}>
-              {name}
             </text>
           </Marker>
         ))
