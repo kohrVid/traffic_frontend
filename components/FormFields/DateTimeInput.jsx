@@ -1,10 +1,10 @@
 import styles from './styles.module.scss';
 
-export const DateInput = ({ name }) => {
+export const DateTimeInput = ({ name }) => {
   return (
     <div className={styles.date}>
       <label htmlFor={name}>{name}:</label>
-      <input type="date" id={name} name={name} />
+      <input type="datetime-local" id={name} name={name} />
     </div>
   );
 }

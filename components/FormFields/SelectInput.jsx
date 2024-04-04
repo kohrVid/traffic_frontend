@@ -6,8 +6,8 @@ export const SelectInput = ({ name, options }) => {
       <label htmlFor={name}>Select a page:</label>
 
       <select name={name} id={name}>
-        {options.map((option) => (
-          <option key={option.id} value={option.id}>
+        {options.map((option, idx) => (
+          <option key={`${name}-option-${idx}`} value={option.id}>
             {option.name}
           </option>
         ))}

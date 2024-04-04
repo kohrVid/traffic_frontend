@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { DateInput, SelectInput } from '@/components/FormFields';
+import { DateTimeInput, SelectInput } from '@/components/FormFields';
 import { WorldMap } from '@/components/WorldMap';
 import { allPages } from '@/components/api/pages.js';
 import { allVisits } from '@/components/api/visits.js';
@@ -32,8 +32,8 @@ export default function Home() {
       {pages && (pages.length > 0) && (
         <SelectInput name="pages" options={pages} />
       )}
-      <DateInput name="from" />
-      <DateInput name="to" />
+      <DateTimeInput name="from" />
+      <DateTimeInput name="to" />
       <WorldMap visits={visits} />
     </>
   );

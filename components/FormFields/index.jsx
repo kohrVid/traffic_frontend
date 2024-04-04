@@ -1,4 +1,4 @@
-import { DateInput } from './DateInput.jsx';
+import { DateTimeInput } from './DateTimeInput.jsx';
 import { SelectInput } from './SelectInput.jsx';
 
-export { DateInput, SelectInput };
+export { DateTimeInput, SelectInput };
