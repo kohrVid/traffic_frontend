@@ -4,7 +4,7 @@ export const Markers = ({ visits }) => {
   return (
     <>
       {
-        visits.map(({ latitude, longitude }, idx) => (
+        visits && visits.map(({ latitude, longitude }, idx) => (
           <Marker key={idx} coordinates={[longitude, latitude]}>
             <circle r={6} fill="#b5f303"
               opacity={0.9}

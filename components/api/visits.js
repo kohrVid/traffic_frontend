@@ -1,17 +1,26 @@
 const controller = new AbortController()
 
-const allVisits = () => fetch(
-  '/api/visits',
-  {
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
-    signal: controller.signal,
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
+const listVisits = (pageId, fromDate, toDate) => {
+  const queryParams = (pageId || fromDate || toDate) ? (
+    {
+      page_id: pageId,
+      from: fromDate,
+      to: toDate,
+    }) : {}
+
+  return fetch(
+    visitsPath(queryParams),
+    {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+      signal: controller.signal,
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      }
     }
-  }
-);
+  );
+};
 
 const createVisit = (pageId, userId, ipAddress) => fetch(
   '/api/visits',
@@ -34,4 +43,19 @@ const createVisit = (pageId, userId, ipAddress) => fetch(
   }
 );
 
-export { allVisits, createVisit }
+const visitsPath = (queryParams) => {
+  const isQueryPresent = Object.entries(queryParams).length > 0
+
+  return (isQueryPresent) ? (
+    '/api/visits?' +
+      new URLSearchParams(
+        Object.fromEntries(
+          Object.entries(queryParams).filter(([_, v]) => !isBlank(v))
+        )
+      )
+    ) : ('/api/visits');
+};
+
+const isBlank = (value) => ([null, ''].includes(value));
+
+export { listVisits, createVisit }

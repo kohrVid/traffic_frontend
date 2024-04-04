@@ -6,7 +6,7 @@ import { catchApiErrors } from '../api/utils.js';
 export const VisitProvider = ({ children }) => {
   const [errors, setErrors] = useState([]);
   const [router, setRouter] = useState();
-  const [pageId, setPageId] = useState();
+  const [pageId, setPageId] = useState(null);
   const [reqHeaders, setReqHeaders] = useState({})
   const userId = null;
 
@@ -14,7 +14,7 @@ export const VisitProvider = ({ children }) => {
   useEffect(() => {
     const ipAddress = reqHeaders['x-forwarded-for'] || '::1';
 
-    if (pageId !== undefined) {
+    if (pageId != null) {
       createVisit(pageId, userId, ipAddress)
         .then((res) => res.json())
         .then((response) => {
