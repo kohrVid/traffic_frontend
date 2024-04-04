@@ -4,7 +4,7 @@ import geoUrl from './countries-50m.json';
 
 export const WorldMap = ({ time, visits }) => {
   return (
-    <ComposableMap>
+    <ComposableMap width={1200}>
       <Geographies geography={geoUrl}>
         {({ geographies }) =>
           geographies.map((geo) => (

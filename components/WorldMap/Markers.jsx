@@ -6,9 +6,10 @@ export const Markers = ({ visits }) => {
       {
         visits.map(({ latitude, longitude }, idx) => (
           <Marker key={idx} coordinates={[longitude, latitude]}>
-            <circle r={5} fill="#23b723"
-              stroke="#fff"
-              strokeWidth={3}
+            <circle r={6} fill="#b5f303"
+              opacity={0.9}
+              stroke="#f7f7f7"
+              strokeWidth={4}
               strokeOpacity={0.5} />
             <text
               textAnchor="middle"
