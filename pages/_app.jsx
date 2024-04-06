@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { SessionProvider } from '@/components/SessionContext';
 import { VisitProvider } from '@/components/VisitContext';
 import "@/styles/globals.css";
 
@@ -15,9 +16,11 @@ export default function App({ Component, pageProps }) {
       </Head>
 
       <main>
-        <VisitProvider>
-          <Component {...pageProps} />
-        </VisitProvider>
+        <SessionProvider>
+          <VisitProvider>
+            <Component {...pageProps} />
+          </VisitProvider>
+        </SessionProvider>
       </main>
     </>
   )
