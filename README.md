@@ -22,6 +22,7 @@ make requests to this application and then display its metrics.
 * NodeJS 21+ (This application was created with v21.7.1 using
   [asdf](https://asdf-vm.com/))
 * NextJS (`npm install -g --registry=https://registry.npmjs.org next`)
+* [ngrok](https://ngrok.com/download)
 
 
 ## Development
@@ -36,7 +37,11 @@ variables. Then run the server with the following:
 
     npm run dev
 
-The app should then appear in http://localhost:1234
+The app should then appear in http://localhost:1234 however, the app will be
+unable to collect a user's IP address. An ngrok tunnel must be run in order to
+use the app in the development environment:
+
+    ngrok http 1234
 
 Run linting:
 

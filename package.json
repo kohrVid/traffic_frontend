@@ -9,10 +9,13 @@
     "lint": "next lint",
     "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
   },
+  "type": "module",
   "dependencies": {
     "next": "14.1.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-simple-maps": "github:kohrVid/react-simple-maps",
+    "sass": "^1.72.0"
   },
   "devDependencies": {
     "@testing-library/react": "^14.2.2",
