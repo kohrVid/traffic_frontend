@@ -1,5 +1,18 @@
 const controller = new AbortController()
 
+const auth = () => fetch(
+  '/api/users/auth',
+  {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'include',
+    signal: controller.signal,
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    }
+  }
+);
+
 const signUp = (
   username,
   email,
@@ -65,4 +78,4 @@ const logOut = () => fetch(
   }
 );
 
-export { logIn, logOut, signUp };
+export { auth, logIn, logOut, signUp };
