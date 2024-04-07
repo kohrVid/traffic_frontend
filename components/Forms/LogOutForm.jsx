@@ -11,6 +11,8 @@ export const LogOutForm = () => {
     setNotices,
     authenticated,
     setAuthenticated,
+    adminAuthenticated,
+    setAdminAuthenticated,
   } = useContext(SessionContext);
 
   const handleSubmit = (event) => {
@@ -19,6 +21,7 @@ export const LogOutForm = () => {
     logOut().then((res) => {
       if ((res.status === 200) || (res.status === 204)) {
         setAuthenticated(false)
+        setAdminAuthenticated(false)
         setNotices('Logged out')
 
         if (typeof window !== 'undefined') { window.location.href = "/" };
