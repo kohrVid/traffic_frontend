@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { SessionContext } from '@/components/SessionContext';
 import { FlashMessage } from '@/components/Partials/Errors/FlashMessage';
-import { AlreadyLoggedIn } from '@/components/Partials/Errors/AlreadyLoggedIn';
+import { AlreadyLoggedIn } from '@/components/Partials/Errors/AlreadyLoggedIn.jsx';
 import { LogInForm } from '@/components/Partials/Forms/LogInForm';
 
 const LogIn = () => {

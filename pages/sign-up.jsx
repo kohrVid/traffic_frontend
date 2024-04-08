@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { withRouter } from 'next/router';
 import { SessionContext } from '@/components/SessionContext';
 import { FlashMessage } from '@/components/Partials/Errors/FlashMessage';
-import { AlreadyLoggedIn } from '@/components/Partials/Errors/AlreadyLoggedIn';
+import { AlreadyLoggedIn } from '@/components/Partials/Errors/AlreadyLoggedIn.jsx';
 import { RegistrationForm } from '@/components/Partials/Forms/RegistrationForm';
 
 export const getServerSideProps = async ({ req }) => (

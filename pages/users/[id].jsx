@@ -2,8 +2,8 @@ import { useContext, useEffect, useState } from 'react';
 import { withRouter } from 'next/router';
 import { SessionContext } from '@/components/SessionContext';
 import { FlashMessage } from '@/components/Partials/Errors/FlashMessage';
-import { PleaseLogIn } from '@/components/Partials/Errors/PleaseLogIn';
-import { Unauthorised } from '@/components/Partials/Errors/Unauthorised';
+import { PleaseLogIn } from '@/components/Partials/Errors/PleaseLogIn.jsx';
+import { Unauthorised } from '@/components/Partials/Errors/Unauthorised.jsx';
 import { PageVisits } from '@/components/Partials/PageVisits';
 import { user as getUser } from '@/components/api/users.js';
 import { catchApiErrors } from '@/components/api/utils.js';
@@ -45,15 +45,19 @@ const UsersShow = ({ router }) => {
   return (
     <>
       {!authenticated ? (
-        <FlashMessage success={notices} errors={errors} />
+        <>
+          <FlashMessage success={notices} errors={errors} />
 
-        <PleaseLogIn />
+          <PleaseLogIn />
+        </>
           ) : (
         <>
           {!isAuthorised ? (
-            <FlashMessage success={notices} errors={errors} />
+            <>
+              <FlashMessage success={notices} errors={errors} />
 
-            <Unauthorised />
+              <Unauthorised />
+            </>
           ) : (
             <>
               {user && (

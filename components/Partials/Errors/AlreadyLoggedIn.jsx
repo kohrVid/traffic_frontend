@@ -1,6 +1,8 @@
+import styles from './styles.module.scss';
+
 export const AlreadyLoggedIn = () => {
   return (
-    <p>
+    <p className={styles.autoFlex}>
       You are already logged in!
     </p>
   );
