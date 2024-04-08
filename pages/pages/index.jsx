@@ -2,6 +2,8 @@ import { useContext, useEffect } from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import { withRouter } from 'next/router';
 import { VisitContext } from '@/components/VisitContext';
+import { Link } from '@/components/Link';
+import styles from './styles.module.scss';
 
 export const getServerSideProps = async ({ req }) => (
   {
@@ -30,17 +32,17 @@ const Index = ({ router, headers }) => {
     <>
       <h1>Index</h1>
 
-      <p>
+      <p className={styles.autoFlex}>
         This is a test page. Viewing this page
         will fire a request to the backend.
       </p>
 
-      <ul>
+      <ul className={styles.autoFlex}>
         <li>
-          <a href="/pages/about">About</a>
+          <Link href="/pages/about">About</Link>
         </li>
         <li>
-          <a href="/pages/contact">Contact</a>
+          <Link href="/pages/contact">Contact</Link>
         </li>
       </ul>
     </>

@@ -28,9 +28,14 @@ export const Menu = () => {
 
       <ul className={`${styles.navItems} ${styles.navLinks}`}>
         {authenticated ? (
-          <li>
-            <LogOutForm />
-          </li>
+          <>
+            <li>
+              <Link href="/pages">Tracked Pages</Link>
+            </li>
+            <li>
+              <LogOutForm />
+            </li>
+          </>
         ) : (
           <>
             <li>
