@@ -14,6 +14,7 @@ export const Menu = () => {
     setAuthenticated,
     adminAuthenticated,
     setAdminAuthenticated,
+    currentUser,
   } = useContext(SessionContext);
 
   return (
@@ -32,6 +33,16 @@ export const Menu = () => {
             <li>
               <Link href="/pages">Tracked Pages</Link>
             </li>
+            {adminAuthenticated && (
+              <li>
+                <Link href="/users">All Users</Link>
+              </li>
+            )}
+            {currentUser && (
+              <li>
+                <Link href={`/users/${currentUser.id}`}>Profile</Link>
+              </li>
+            )}
             <li>
               <LogOutForm />
             </li>

@@ -1,7 +1,6 @@
 @import '../colours.scss';
 
 .wrapper {
-  width: 100%;
   clear: both;
   overflow: auto;
   font-family: 'Inter', 'Open Sans', sans-serif;
@@ -11,6 +10,10 @@
   flex-wrap: wrap;
   padding: 1.2rem 5rem;
   border-bottom: double 4px $green;
+
+  @media screen and (max-width: 600px) {
+    padding-right: 0;
+  }
 }
 
 @mixin noMarginList {
@@ -32,10 +35,6 @@
     flex-direction: row;
 
   }
-
-  @media screen and (max-width: 600px) {
-    width: 80vw;
-  }
 }
 
 .navLinks {
@@ -50,12 +49,14 @@
     justify-content: center;
     align-content: center;
   }
-    @media screen and (min-width: 577px) {
-      justify-content: flex-end;
-    }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (min-width: 577px) {
+    justify-content: flex-end;
+  }
+
+  @media screen and (max-width: 750px) {
     right: unset;
+    width: 90%;
   }
 }
 
