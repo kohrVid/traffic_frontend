@@ -63,11 +63,3 @@
   font-size: 3.2rem;
   max-width: 50vw;
 }
-
-.plainLink {
-  &:link, &:visited, &:hover, &:active {
-    text-decoration: none !important;
-    font-style: normal;
-    color: inherit;
-  }
-}

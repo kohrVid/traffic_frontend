@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { SessionContext } from '../SessionContext';
 import { LogOutForm } from '../Forms/LogOutForm';
+import { Link } from '../Link';
 import styles from './styles.module.scss';
 
 export const Menu = () => {
@@ -19,9 +20,9 @@ export const Menu = () => {
     <nav role="navigation" className={styles.wrapper}>
       <ul className={styles.navItems}>
         <li>
-          <a className={`${styles.title} ${styles.plainLink}`} href="/">
+          <Link className={styles.title} href="/">
             Page Traffic
-          </a>
+          </Link>
         </li>
       </ul>
 
@@ -33,10 +34,10 @@ export const Menu = () => {
         ) : (
           <>
             <li>
-              <a href="/sign-up">Sign Up</a>
+              <Link href="/sign-up">Sign Up</Link>
             </li>
             <li>
-              <a href="/log-in">Log In</a>
+              <Link href="/log-in">Log In</Link>
             </li>
           </>
         )}
