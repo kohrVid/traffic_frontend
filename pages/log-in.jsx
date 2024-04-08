@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { SessionContext } from '@/components/SessionContext';
-import { LoggedIn } from '@/components/LoggedIn';
-import { LogInForm } from '@/components/Forms/LogInForm';
+import { LoggedIn } from '@/components/Partials/LoggedIn';
+import { LogInForm } from '@/components/Partials/Forms/LogInForm';
 
 const LogIn = () => {
   const {

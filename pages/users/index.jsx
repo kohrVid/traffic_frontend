@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { SessionContext } from '@/components/SessionContext';
-import { PleaseLogIn } from '@/components/PleaseLogIn';
 import { Link } from '@/components/Link';
+import { PleaseLogIn } from '@/components/Partials/PleaseLogIn';
 import { users as getUsers } from '@/components/api/users.js';
 import { catchApiErrors } from '@/components/api/utils.js';
 import styles from './styles.module.scss';

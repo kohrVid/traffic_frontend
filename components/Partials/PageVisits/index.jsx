@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from '@/components/Link';
-import { userVisits } from '../api/users.js';
-import { catchApiErrors } from '@/components/api/utils.js';
+import { userVisits } from '../../api/users.js';
+import { catchApiErrors } from '../../api/utils.js';
 import styles from './styles.module.scss';
 
 export const PageVisits = ({ userId }) => {

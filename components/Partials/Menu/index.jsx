@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
-import { SessionContext } from '../SessionContext';
+import { SessionContext } from '../../SessionContext';
 import { LogOutForm } from '../Forms/LogOutForm';
-import { Link } from '../Link';
+import { Link } from '../../Link';
 import styles from './styles.module.scss';
 
 export const Menu = () => {

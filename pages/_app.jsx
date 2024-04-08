@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { SessionProvider } from '@/components/SessionContext';
 import { VisitProvider } from '@/components/VisitContext';
-import { Menu } from '@/components/Menu';
+import { Menu } from '@/components/Partials/Menu';
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {

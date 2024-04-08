@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { SessionContext } from '../SessionContext';
-import { Link } from '../Link';
-import { logOut } from '../api/sessions.js';
-import { catchApiErrors } from '../api/utils.js';
+import { SessionContext } from '../../SessionContext';
+import { Link } from '../../Link';
+import { logOut } from '../../api/sessions.js';
+import { catchApiErrors } from '../../api/utils.js';
 
 export const LogOutForm = () => {
   const {

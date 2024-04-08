@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { VisitContext } from '@/components/VisitContext';
 import { DateTimeInput, Label, SelectInput } from '@/components/FormFields';
-import { WorldMap } from '@/components/WorldMap';
+import { WorldMap } from '@/components/Partials/WorldMap';
 import { allPages } from '@/components/api/pages.js';
 import { listVisits } from '@/components/api/visits.js';
 import { catchApiErrors } from '@/components/api/utils.js';

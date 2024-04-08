@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { withRouter } from 'next/router';
 import { SessionContext } from '@/components/SessionContext';
-import { PleaseLogIn } from '@/components/PleaseLogIn';
-import { LogInForm } from '@/components/Forms/LogInForm';
-import { PageVisits } from '@/components/PageVisits';
+import { PleaseLogIn } from '@/components/Partials/PleaseLogIn';
+import { PageVisits } from '@/components/Partials/PageVisits';
 import { user as getUser } from '@/components/api/users.js';
 import { catchApiErrors } from '@/components/api/utils.js';
 import styles from './styles.module.scss';

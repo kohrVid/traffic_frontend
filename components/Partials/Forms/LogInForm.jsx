@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
-import { SessionContext } from '../SessionContext';
-import { Button, Label, PasswordInput, TextInput } from '../FormFields';
-import { logIn } from '../api/sessions.js';
-import { catchApiErrors } from '../api/utils.js';
+import { SessionContext } from '../../SessionContext';
+import { Button, Label, PasswordInput, TextInput } from '../../FormFields';
+import { logIn } from '../../api/sessions.js';
+import { catchApiErrors } from '../../api/utils.js';
 import styles from './styles.module.scss';
 
 export const LogInForm = ({ ipAddress }) => {
