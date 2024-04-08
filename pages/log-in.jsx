@@ -7,9 +7,7 @@ import { LogInForm } from '@/components/Partials/Forms/LogInForm';
 const LogIn = () => {
   const {
     errors,
-    setErrors,
     notices,
-    setNotices,
     authenticated,
   } = useContext(SessionContext);
 

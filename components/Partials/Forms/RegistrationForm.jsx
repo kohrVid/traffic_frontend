@@ -12,9 +12,7 @@ export const RegistrationForm = ({ ipAddress }) => {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
   const {
-    errors,
     setErrors,
-    notices,
     setNotices,
   } = useContext(SessionContext);
 
@@ -46,6 +44,8 @@ export const RegistrationForm = ({ ipAddress }) => {
       if ((res.status === 200) || (res.status === 201)) {
         res.json().then((response) => {
           setErrors(errors => [...errors, response.errors]);
+          setNotices(notices => [...notices, "Registration successful"])
+
           if (typeof window !== 'undefined') {
             window.location.href = "/log-in"
           };
@@ -56,7 +56,6 @@ export const RegistrationForm = ({ ipAddress }) => {
 
       res.json().then((response) => {
         setErrors(errors => [...errors, response.errors]);
-        console.log(response.errors);
       })
     }).catch(err => {
       catchApiErrors(err, setErrors);

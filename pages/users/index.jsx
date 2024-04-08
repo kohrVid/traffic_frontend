@@ -16,7 +16,6 @@ const UsersIndex = () => {
     errors,
     setErrors,
     notices,
-    setNotices,
     authenticated,
     adminAuthenticated,
   } = useContext(SessionContext);

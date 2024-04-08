@@ -6,9 +6,7 @@ import { catchApiErrors } from '../../api/utils.js';
 
 export const LogOutForm = () => {
   const {
-    errors,
     setErrors,
-    notices,
     setNotices,
     setAuthenticated,
     setAdminAuthenticated,

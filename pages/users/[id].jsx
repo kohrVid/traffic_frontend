@@ -18,7 +18,6 @@ const UsersShow = ({ router }) => {
     errors,
     setErrors,
     notices,
-    setNotices,
     authenticated,
     adminAuthenticated,
     currentUser,

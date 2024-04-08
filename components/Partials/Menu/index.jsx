@@ -6,10 +6,6 @@ import styles from './styles.module.scss';
 
 export const Menu = () => {
   const {
-    errors,
-    setErrors,
-    notices,
-    setNotices,
     authenticated,
     adminAuthenticated,
     currentUser,

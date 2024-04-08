@@ -10,9 +10,7 @@ export const LogInForm = () => {
   const [password, setPassword] = useState("");
 
   const {
-    errors,
     setErrors,
-    notices,
     setNotices,
     setAuthenticated,
     setCurrentUser,
@@ -32,6 +30,7 @@ export const LogInForm = () => {
     logIn(email, password).then((res) => {
       if ((res.status === 200) || (res.status === 201)) {
         setAuthenticated(true)
+        setNotices(notices => [...notices, "Successfully logged in"])
         if (typeof window !== 'undefined') { window.location.href = "/" };
 
         return res.json()

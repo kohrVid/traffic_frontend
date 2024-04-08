@@ -18,9 +18,7 @@ const SignUp = ({ router, headers }) => {
 
   const {
     errors,
-    setErrors,
     notices,
-    setNotices,
     authenticated,
   } = useContext(SessionContext);
 

@@ -18,8 +18,6 @@ export default function Home() {
   const {
     errors,
     notices,
-    setNotices,
-    authenticated,
   } = useContext(SessionContext);
 
   const {
