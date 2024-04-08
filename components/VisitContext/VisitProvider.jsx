@@ -27,7 +27,7 @@ export const VisitProvider = ({ children }) => {
           catchApiErrors(err, setErrors);
         });
     };
-  }, [reqHeaders, currentUser]);
+  }, [reqHeaders, currentUser, pageId]);
 
   return(
     <VisitContext.Provider

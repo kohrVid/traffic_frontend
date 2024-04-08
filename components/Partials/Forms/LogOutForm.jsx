@@ -10,9 +10,7 @@ export const LogOutForm = () => {
     setErrors,
     notices,
     setNotices,
-    authenticated,
     setAuthenticated,
-    adminAuthenticated,
     setAdminAuthenticated,
   } = useContext(SessionContext);
 

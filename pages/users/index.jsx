@@ -17,11 +17,7 @@ const UsersIndex = () => {
     notices,
     setNotices,
     authenticated,
-    setAuthenticated,
     adminAuthenticated,
-    setAdminAuthenticated,
-    currentUser,
-    setCurrentUser,
   } = useContext(SessionContext);
 
   useEffect(() => {
@@ -33,7 +29,7 @@ const UsersIndex = () => {
       }).catch(err => {
         catchApiErrors(err, setErrors);
       });
-  }, [adminAuthenticated]);
+  }, [adminAuthenticated, setErrors]);
 
   return (
     <>
@@ -59,7 +55,7 @@ const UsersIndex = () => {
                     </thead>
                     <tbody>
                       {users.map((user) => (
-                        <tr>
+                        <tr key={user.id}>
                           <td>
                             <Link href={`/users/${user.id}`}>{user.id}</Link>
                           </td>

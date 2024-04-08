@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { SessionContext } from '../../SessionContext';
 import { LogOutForm } from '../Forms/LogOutForm';
 import { Link } from '../../Link';
@@ -11,9 +11,7 @@ export const Menu = () => {
     notices,
     setNotices,
     authenticated,
-    setAuthenticated,
     adminAuthenticated,
-    setAdminAuthenticated,
     currentUser,
   } = useContext(SessionContext);
 

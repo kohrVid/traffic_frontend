@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { SessionContext } from '@/components/SessionContext';
 import { AlreadyLoggedIn } from '@/components/Partials/Errors/AlreadyLoggedIn';
 import { LogInForm } from '@/components/Partials/Forms/LogInForm';
@@ -10,9 +10,6 @@ const LogIn = () => {
     notices,
     setNotices,
     authenticated,
-    setAuthenticated,
-    adminAuthenticated,
-    setAdminAuthenticated,
   } = useContext(SessionContext);
 
   return (

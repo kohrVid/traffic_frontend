@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './label.module.scss';
 
 export const Label = ({ htmlFor, children, className }) => {

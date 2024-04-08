@@ -1,5 +1,3 @@
-import styles from './styles.module.scss';
-
 export const SelectInput = ({ name, options, onChange }) => {
   return (
     <div>

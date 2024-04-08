@@ -16,8 +16,6 @@ export const RegistrationForm = ({ ipAddress }) => {
     setErrors,
     notices,
     setNotices,
-    authenticated,
-    setAuthenticated,
   } = useContext(SessionContext);
 
   const handleUsernameChange = (event) => {

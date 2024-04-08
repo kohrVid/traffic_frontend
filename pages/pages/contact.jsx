@@ -1,5 +1,4 @@
 import { useContext, useEffect } from 'react';
-import { GetServerSideProps, NextPage } from 'next';
 import { withRouter } from 'next/router';
 import { VisitContext } from '@/components/VisitContext';
 import styles from './styles.module.scss';
@@ -25,7 +24,7 @@ const Contact = ({ router, headers }) => {
       setReqHeaders(headers)
       setPageId(3)
     }
-  }, [router.isReady, setReqHeaders, setPageId, headers]);
+  }, [router.isReady, router, setRouter, setReqHeaders, setPageId, headers]);
 
   return (
     <>

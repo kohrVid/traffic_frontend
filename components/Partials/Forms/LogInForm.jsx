@@ -5,7 +5,7 @@ import { logIn } from '../../api/sessions.js';
 import { catchApiErrors } from '../../api/utils.js';
 import styles from './styles.module.scss';
 
-export const LogInForm = ({ ipAddress }) => {
+export const LogInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,8 +14,8 @@ export const LogInForm = ({ ipAddress }) => {
     setErrors,
     notices,
     setNotices,
-    authenticated,
     setAuthenticated,
+    setCurrentUser,
   } = useContext(SessionContext);
 
   const handleEmailChange = (event) => {

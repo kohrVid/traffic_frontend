@@ -19,11 +19,8 @@ const UsersShow = ({ router }) => {
     notices,
     setNotices,
     authenticated,
-    setAuthenticated,
     adminAuthenticated,
-    setAdminAuthenticated,
     currentUser,
-    setCurrentUser,
   } = useContext(SessionContext);
 
   useEffect(() => {
@@ -33,7 +30,7 @@ const UsersShow = ({ router }) => {
         (currentUser.id === userId) || adminAuthenticated
       );
     }
-  }, [router.isReady, currentUser, adminAuthenticated]);
+  }, [router.isReady, router.query.id, currentUser, userId, adminAuthenticated]);
 
   useEffect(() => {
     userId && getUser(userId).then((res) => res.json())
@@ -42,7 +39,7 @@ const UsersShow = ({ router }) => {
       }).catch(err => {
         catchApiErrors(err, setErrors);
       });
-  }, [userId]);
+  }, [userId, setErrors]);
 
   return (
     <>

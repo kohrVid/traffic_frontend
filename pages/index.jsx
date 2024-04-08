@@ -40,7 +40,7 @@ export default function Home() {
       }).catch(err => {
         catchApiErrors(err, setErrors);
       });
-  }, []);
+  }, [setErrors]);
 
   useEffect(() => {
     listVisits(pageId, fromDate, toDate)
@@ -50,7 +50,7 @@ export default function Home() {
       }).catch(err => {
         catchApiErrors(err, setErrors);
       });
-  }, [pageId, fromDate, toDate]);
+  }, [pageId, fromDate, toDate, setErrors]);
 
   return (
     <>

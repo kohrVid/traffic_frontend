@@ -1,11 +1,16 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link } from '@/components/Link';
+import { SessionContext } from '../../SessionContext';
+import { Link } from '../../Link';
 import { userVisits } from '../../api/users.js';
 import { catchApiErrors } from '../../api/utils.js';
 import styles from './styles.module.scss';
 
 export const PageVisits = ({ userId }) => {
   const [visits, setVisits] = useState([])
+
+  const {
+    setErrors,
+  } = useContext(SessionContext);
 
   useEffect(() => {
     userVisits(userId).then((res) => res.json())
@@ -14,7 +19,7 @@ export const PageVisits = ({ userId }) => {
       }).catch(err => {
         catchApiErrors(err, setErrors);
       });
-  }, []);
+  }, [userId, setErrors]);
 
   return (
     <table className={styles.table}>
@@ -29,7 +34,7 @@ export const PageVisits = ({ userId }) => {
       </thead>
       <tbody>
         {visits && visits.map((visit) => (
-          <tr>
+          <tr key={visit.id}>
             <td>{visit.page_name}</td>
             <td>
               <Link href={visit.page_url}>{visit.page_url}</Link>

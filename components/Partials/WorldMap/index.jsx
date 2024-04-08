@@ -2,7 +2,7 @@ import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 import { Markers } from './Markers.jsx';
 import geoUrl from './countries-50m.json';
 
-export const WorldMap = ({ time, visits }) => {
+export const WorldMap = ({ visits }) => {
   return (
     <ComposableMap width={1200}>
       <Geographies geography={geoUrl}>
