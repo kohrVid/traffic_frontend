@@ -1,4 +1,4 @@
-export const LoggedIn = () => {
+export const AlreadyLoggedIn = () => {
   return (
     <p>
       You are already logged in!

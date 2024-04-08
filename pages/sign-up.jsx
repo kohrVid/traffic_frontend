@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import { withRouter } from 'next/router';
 import { SessionContext } from '@/components/SessionContext';
-import { LoggedIn } from '@/components/Partials/LoggedIn';
+import { AlreadyLoggedIn } from '@/components/Partials/Errors/AlreadyLoggedIn';
 import { RegistrationForm } from '@/components/Partials/Forms/RegistrationForm';
 import { catchApiErrors } from '@/components/api/utils.js';
 
@@ -35,7 +35,7 @@ const SignUp = ({ router, headers }) => {
   return (
     <>
       {authenticated ? (
-        <LoggedIn />
+        <AlreadyLoggedIn />
       ) : (
         <>
           <h1>Sign Up</h1>

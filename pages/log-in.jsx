@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { SessionContext } from '@/components/SessionContext';
-import { LoggedIn } from '@/components/Partials/LoggedIn';
+import { AlreadyLoggedIn } from '@/components/Partials/Errors/AlreadyLoggedIn';
 import { LogInForm } from '@/components/Partials/Forms/LogInForm';
 
 const LogIn = () => {
@@ -18,7 +18,7 @@ const LogIn = () => {
   return (
     <>
       {authenticated ? (
-        <LoggedIn />
+        <AlreadyLoggedIn />
       ) : (
         <>
           <h1>Log In</h1>

@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { withRouter } from 'next/router';
 import { SessionContext } from '@/components/SessionContext';
-import { PleaseLogIn } from '@/components/Partials/PleaseLogIn';
+import { PleaseLogIn } from '@/components/Partials/Errors/PleaseLogIn';
+import { Unauthorised } from '@/components/Partials/Errors/Unauthorised';
 import { PageVisits } from '@/components/Partials/PageVisits';
 import { user as getUser } from '@/components/api/users.js';
 import { catchApiErrors } from '@/components/api/utils.js';
@@ -50,9 +51,7 @@ const UsersShow = ({ router }) => {
           ) : (
         <>
           {!isAuthorised ? (
-            <p>
-              Sorry, you are not authorised to view this page
-            </p>
+            <Unauthorised />
           ) : (
             <>
               {user && (

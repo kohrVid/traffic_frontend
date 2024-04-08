@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { SessionContext } from '@/components/SessionContext';
 import { Link } from '@/components/Link';
-import { PleaseLogIn } from '@/components/Partials/PleaseLogIn';
+import { PleaseLogIn } from '@/components/Partials/Errors/PleaseLogIn';
+import { Unauthorised } from '@/components/Partials/Errors/Unauthorised';
 import { users as getUsers } from '@/components/api/users.js';
 import { catchApiErrors } from '@/components/api/utils.js';
 import styles from './styles.module.scss';
@@ -41,9 +42,7 @@ const UsersIndex = () => {
           ) : (
         <>
           {!isAuthorised ? (
-            <p>
-              Sorry, you are not authorised to view this page
-            </p>
+            <Unauthorised />
           ) : (
             <>
               {users && (
