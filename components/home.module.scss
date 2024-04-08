@@ -1,0 +1,15 @@
+.row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 0.5rem 0;
+}
+
+.item {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  margin-right: 5rem;
+}

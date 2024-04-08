@@ -7,10 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest --passWithNoTests"
   },
   "type": "module",
   "dependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.1.4",
+    "eslint-plugin-next": "^0.0.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",

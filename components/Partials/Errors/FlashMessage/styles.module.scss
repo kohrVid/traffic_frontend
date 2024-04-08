@@ -1,0 +1,35 @@
+@import '../../../colours.scss';
+
+.wrapper {
+  color: $white;
+  word-wrap: normal;
+
+  h3 {
+    margin: 0;
+  }
+
+  ul {
+    margin-top: 0;
+  }
+
+  div {
+    padding: 0.5rem;
+  }
+}
+
+.success {
+  background-color: $green;
+}
+
+.error {
+  background-color: $red;
+}
+
+.noBullet {
+  padding-left: 0;
+  list-style-type: none !important;
+
+  li:before, li::marker {
+    content: none;
+  }
+}

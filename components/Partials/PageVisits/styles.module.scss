@@ -1,0 +1,21 @@
+.table {
+  width: 80vw;
+
+  margin-top: 1.2rem;
+  border-collapse: collapse;
+
+  thead {
+    border: none;
+    border-spacing: 0;
+    th {
+      text-align: left;
+      padding: 4px 7px;
+    }
+  }
+
+  tbody {
+    td {
+      padding: 3px 7px;
+    }
+  }
+}

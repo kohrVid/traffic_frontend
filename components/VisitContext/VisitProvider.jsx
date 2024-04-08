@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { SessionContext } from '@/components/SessionContext';
 import { VisitContext } from './VisitContext.jsx';
 import { createVisit } from '../api/visits.js';
 import { catchApiErrors } from '../api/utils.js';
@@ -8,11 +9,14 @@ export const VisitProvider = ({ children }) => {
   const [router, setRouter] = useState();
   const [pageId, setPageId] = useState(null);
   const [reqHeaders, setReqHeaders] = useState({})
-  const userId = null;
 
+  const {
+    currentUser,
+  } = useContext(SessionContext);
 
   useEffect(() => {
     const ipAddress = reqHeaders['x-forwarded-for'] || '::1';
+    const userId = currentUser ? currentUser.id : null
 
     if (pageId != null) {
       createVisit(pageId, userId, ipAddress)
@@ -23,7 +27,7 @@ export const VisitProvider = ({ children }) => {
           catchApiErrors(err, setErrors);
         });
     };
-  }, [reqHeaders]);
+  }, [reqHeaders, currentUser, pageId]);
 
   return(
     <VisitContext.Provider
