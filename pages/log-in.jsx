@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { SessionContext } from '@/components/SessionContext';
+
 import { LogInForm } from '@/components/Forms/LogInForm';
-import { LogOutForm } from '@/components/Forms/LogOutForm';
-import { catchApiErrors } from '@/components/api/utils.js';
 
 const LogIn = () => {
   const {
@@ -12,6 +11,8 @@ const LogIn = () => {
     setNotices,
     authenticated,
     setAuthenticated,
+    adminAuthenticated,
+    setAdminAuthenticated,
   } = useContext(SessionContext);
 
   return (
@@ -19,7 +20,6 @@ const LogIn = () => {
       <h1>Log In</h1>
 
       <LogInForm />
-      <LogOutForm />
     </>
   );
 };

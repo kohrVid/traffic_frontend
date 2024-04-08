@@ -1,0 +1,73 @@
+@import '../colours.scss';
+
+.wrapper {
+  width: 100%;
+  clear: both;
+  overflow: auto;
+  font-family: 'Inter', 'Open Sans', sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.2rem 5rem;
+  border-bottom: double 4px $green;
+}
+
+@mixin noMarginList {
+  margin: 0;
+  margin-block: 0;
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+
+.navItems {
+  @include noMarginList;
+  display: inline-flex;
+  position: relative;
+
+  & > li {
+    display: inline-flex;
+    flex: 1;
+    flex-grow: 2;
+    flex-direction: row;
+
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 80vw;
+  }
+}
+
+.navLinks {
+  padding-inline-end: 0;
+  right: -30%;
+  position: relative;
+  width: 30vw;
+  flex-direction: row;
+  font-weight: bold;
+
+  & > li a, form {
+    justify-content: center;
+    align-content: center;
+  }
+    @media screen and (min-width: 577px) {
+      justify-content: flex-end;
+    }
+
+  @media screen and (max-width: 600px) {
+    right: unset;
+  }
+}
+
+.title {
+  font-size: 3.2rem;
+  max-width: 50vw;
+}
+
+.plainLink {
+  &:link, &:visited, &:hover, &:active {
+    text-decoration: none !important;
+    font-style: normal;
+    color: inherit;
+  }
+}

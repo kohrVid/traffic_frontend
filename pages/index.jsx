@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <>
-      <h1>Page Traffic</h1>
+      <h1>View page traffic data</h1>
       {pages && (pages.length > 0) && (
         <SelectInput name="pages" options={pages} onChange={handlePageChange} />
       )}
