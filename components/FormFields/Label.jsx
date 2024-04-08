@@ -6,5 +6,5 @@ export const Label = ({ children, className }) => {
     <label className={styles.label + " " + className}>
       {children}
     </label>
-  )
-}
+  );
+};

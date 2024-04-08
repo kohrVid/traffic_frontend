@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { SessionContext } from '../SessionContext';
+import { Link } from '../Link';
 import { logOut } from '../api/sessions.js';
 import { catchApiErrors } from '../api/utils.js';
 
@@ -32,10 +33,10 @@ export const LogOutForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type="submit" value="Log Out" />
-      </form>
-    </div>
+    <form>
+      <Link href="#" onClick={handleSubmit}>
+        Log Out
+      </Link>
+    </form>
   );
 };

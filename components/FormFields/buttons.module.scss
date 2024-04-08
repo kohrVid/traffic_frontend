@@ -1,0 +1,10 @@
+@import '../colours.scss';
+
+.button {
+  background-color: $green;
+  color: $blue;
+  border: unset;
+  cursor: pointer;
+  line-height: 1.4rem;
+  font-weight: bold;
+}

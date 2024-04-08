@@ -3,7 +3,7 @@ import { SessionContext } from '../SessionContext';
 import { Button, Label, PasswordInput, TextInput } from '../FormFields';
 import { signUp } from '../api/sessions.js';
 import { catchApiErrors } from '../api/utils.js';
-
+import styles from './styles.module.scss';
 
 export const RegistrationForm = ({ ipAddress }) => {
   const [username, setUsername] = useState("");
@@ -66,28 +66,49 @@ export const RegistrationForm = ({ ipAddress }) => {
   };
 
   return(
-    <form onSubmit={handleSubmit}>
-      <div>
-        <Label>Username:</Label>
-        <TextInput onChange={handleUsernameChange} value={username} />
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <div className={styles.row}>
+        <div className={styles.label}>
+          <Label>Username:</Label>
+        </div>
+        <div className={styles.input}>
+          <TextInput onChange={handleUsernameChange} value={username} />
+        </div>
       </div>
-      <div>
-        <Label>Email:</Label>
-        <TextInput onChange={handleEmailChange} value={email} />
+      <div className={styles.row}>
+        <div className={styles.label}>
+          <Label>Email:</Label>
+        </div>
+        <div className={styles.input}>
+          <TextInput onChange={handleEmailChange} value={email} />
+        </div>
       </div>
-      <div>
-        <Label>Password:</Label>
-        <PasswordInput onChange={handlePasswordChange} value={password} />
+      <div className={styles.row}>
+        <div className={styles.label}>
+          <Label>Password:</Label>
+        </div>
+        <div className={styles.input}>
+          <PasswordInput onChange={handlePasswordChange} value={password} />
+        </div>
       </div>
-      <div>
-        <Label>Password confirmation:</Label>
-        <PasswordInput onChange={handlePasswordConfirmationChange}
-          value={passwordConfirmation} />
+      <div className={styles.row}>
+        <div className={styles.label}>
+          <Label>Password confirmation:</Label>
+        </div>
+        <div className={styles.input}>
+          <PasswordInput onChange={handlePasswordConfirmationChange}
+            value={passwordConfirmation} />
+        </div>
       </div>
-      <div>
-        <Button type="submit" fixedWidth="100%">
-          Sign up now!
-        </Button>
+      <div className={styles.row}>
+        <div className={styles.label}>
+          &nbsp;
+        </div>
+        <div className={styles.input}>
+          <Button type="submit" fixedWidth="100%">
+            Sign up now!
+          </Button>
+        </div>
       </div>
     </form>
   )

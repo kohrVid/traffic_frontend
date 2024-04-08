@@ -1,0 +1,28 @@
+.form {
+  flex: auto;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 0.5rem 0;
+}
+
+.label {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 0;
+  margin-right: 0.5rem;
+  width: 11rem;
+}
+
+.input {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: 20rem;
+}
