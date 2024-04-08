@@ -30,8 +30,12 @@ export const LogInForm = ({ ipAddress }) => {
     event.preventDefault()
 
     logIn(email, password).then((res) => {
-      if (res.ok) setAuthenticated(true)
-      return res.json()
+      if ((res.status === 200) || (res.status === 201)) {
+        setAuthenticated(true)
+        if (typeof window !== 'undefined') { window.location.href = "/" };
+
+        return res.json()
+      }
     }).then((response) => {
       if (response.data !== undefined) {
         setCurrentUser(response.data)
