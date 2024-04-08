@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { SessionContext } from '@/components/SessionContext';
-
+import { LoggedIn } from '@/components/LoggedIn';
 import { LogInForm } from '@/components/Forms/LogInForm';
 
 const LogIn = () => {
@@ -17,9 +17,15 @@ const LogIn = () => {
 
   return (
     <>
-      <h1>Log In</h1>
+      {authenticated ? (
+        <LoggedIn />
+      ) : (
+        <>
+          <h1>Log In</h1>
 
-      <LogInForm />
+          <LogInForm />
+        </>
+      )}
     </>
   );
 };

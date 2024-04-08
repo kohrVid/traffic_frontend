@@ -3,6 +3,7 @@ import { GetServerSideProps, NextPage } from 'next';
 import { withRouter } from 'next/router';
 import { SessionContext } from '@/components/SessionContext';
 import { VisitContext } from '@/components/VisitContext';
+import { LoggedIn } from '@/components/LoggedIn';
 import { RegistrationForm } from '@/components/Forms/RegistrationForm';
 import { catchApiErrors } from '@/components/api/utils.js';
 
@@ -34,9 +35,15 @@ const SignUp = ({ router, headers }) => {
 
   return (
     <>
-      <h1>Sign Up</h1>
+      {authenticated ? (
+        <LoggedIn />
+      ) : (
+        <>
+          <h1>Sign Up</h1>
 
-      <RegistrationForm ipAddress={ipAddress}/>
+          <RegistrationForm ipAddress={ipAddress}/>
+        </>
+      )}
     </>
   );
 };
