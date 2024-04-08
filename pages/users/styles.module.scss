@@ -1,0 +1,12 @@
+.autoFlex {
+  flex: auto;
+}
+
+.noBullet {
+  padding-left: 0;
+  list-style-type: none !important;
+
+  li:before, li::marker {
+    content: none;
+  }
+}
