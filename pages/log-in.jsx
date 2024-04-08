@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { SessionContext } from '@/components/SessionContext';
+import { FlashMessage } from '@/components/Partials/Errors/FlashMessage';
 import { AlreadyLoggedIn } from '@/components/Partials/Errors/AlreadyLoggedIn';
 import { LogInForm } from '@/components/Partials/Forms/LogInForm';
 
@@ -15,10 +16,16 @@ const LogIn = () => {
   return (
     <>
       {authenticated ? (
-        <AlreadyLoggedIn />
+        <>
+          <FlashMessage success={notices} errors={errors} />
+
+          <AlreadyLoggedIn />
+        </>
       ) : (
         <>
           <h1>Log In</h1>
+
+          <FlashMessage success={notices} errors={errors} />
 
           <LogInForm />
         </>

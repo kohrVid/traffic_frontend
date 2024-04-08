@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { SessionContext } from '@/components/SessionContext';
 import { Link } from '@/components/Link';
+import { FlashMessage } from '@/components/Partials/Errors/FlashMessage';
 import { PleaseLogIn } from '@/components/Partials/Errors/PleaseLogIn';
 import { Unauthorised } from '@/components/Partials/Errors/Unauthorised';
 import { users as getUsers } from '@/components/api/users.js';
@@ -34,13 +35,25 @@ const UsersIndex = () => {
   return (
     <>
       {!authenticated ? (
-        <PleaseLogIn />
+        <>
+          <FlashMessage success={notices} errors={errors} />
+
+          <PleaseLogIn />
+        </>
           ) : (
         <>
           {!isAuthorised ? (
-            <Unauthorised />
+            <>
+              <FlashMessage success={notices} errors={errors} />
+
+              <Unauthorised />
+            </>
           ) : (
             <>
+              <h1>All Users</h1>
+
+              <FlashMessage success={notices} errors={errors} />
+
               {users && (
                 <>
                   <table className={styles.table}>

@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
+import { SessionContext } from '@/components/SessionContext';
 import { VisitContext } from '@/components/VisitContext';
 import { DateTimeInput, Label, SelectInput } from '@/components/FormFields';
+import { FlashMessage } from '@/components/Partials/Errors/FlashMessage';
 import { WorldMap } from '@/components/Partials/WorldMap';
 import { allPages } from '@/components/api/pages.js';
 import { listVisits } from '@/components/api/visits.js';
@@ -12,6 +14,13 @@ export default function Home() {
   const [visits, setVisits] = useState([]);
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
+
+  const {
+    errors,
+    notices,
+    setNotices,
+    authenticated,
+  } = useContext(SessionContext);
 
   const {
     setErrors,
@@ -55,13 +64,16 @@ export default function Home() {
   return (
     <>
       <h1>View page traffic data</h1>
-    {pages && (pages.length > 0) && (
-      <>
-        <Label htmlFor="pages">
-          Select a page:
-        </Label>
-        <SelectInput name="pages" options={pages} onChange={handlePageChange} />
-      </>
+
+      <FlashMessage success={notices} errors={errors} />
+
+      {pages && (pages.length > 0) && (
+        <>
+          <Label htmlFor="pages">
+            Select a page:
+          </Label>
+          <SelectInput name="pages" options={pages} onChange={handlePageChange} />
+        </>
       )}
 
       <div className={styles.row}>

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { withRouter } from 'next/router';
 import { SessionContext } from '@/components/SessionContext';
+import { FlashMessage } from '@/components/Partials/Errors/FlashMessage';
 import { AlreadyLoggedIn } from '@/components/Partials/Errors/AlreadyLoggedIn';
 import { RegistrationForm } from '@/components/Partials/Forms/RegistrationForm';
 
@@ -32,10 +33,16 @@ const SignUp = ({ router, headers }) => {
   return (
     <>
       {authenticated ? (
-        <AlreadyLoggedIn />
+        <>
+          <FlashMessage success={notices} errors={errors} />
+
+          <AlreadyLoggedIn />
+        </>
       ) : (
         <>
           <h1>Sign Up</h1>
+
+          <FlashMessage success={notices} errors={errors} />
 
           <RegistrationForm ipAddress={ipAddress}/>
         </>

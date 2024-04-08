@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { withRouter } from 'next/router';
 import { SessionContext } from '@/components/SessionContext';
+import { FlashMessage } from '@/components/Partials/Errors/FlashMessage';
 import { PleaseLogIn } from '@/components/Partials/Errors/PleaseLogIn';
 import { Unauthorised } from '@/components/Partials/Errors/Unauthorised';
 import { PageVisits } from '@/components/Partials/PageVisits';
@@ -44,16 +45,22 @@ const UsersShow = ({ router }) => {
   return (
     <>
       {!authenticated ? (
+        <FlashMessage success={notices} errors={errors} />
+
         <PleaseLogIn />
           ) : (
         <>
           {!isAuthorised ? (
+            <FlashMessage success={notices} errors={errors} />
+
             <Unauthorised />
           ) : (
             <>
               {user && (
                 <>
                   <h1>{user.username}</h1>
+
+                  <FlashMessage success={notices} errors={errors} />
 
                   <ul className={`${styles.autoFlex} ${styles.noBullet}`}>
                     <li>
