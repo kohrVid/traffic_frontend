@@ -8,7 +8,7 @@ import { catchApiErrors } from '@/components/api/utils.js';
 import styles from '@/components/home.module.scss';
 
 export default function Home() {
-  const [pages, setPages] = useState([{ id: '', name: 'all pages'}]);
+  const [pages, setPages] = useState([]);
   const [visits, setVisits] = useState([]);
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
@@ -34,7 +34,9 @@ export default function Home() {
   useEffect(() => {
     allPages().then((res) => res.json())
       .then((response) => {
-        setPages(Array.from(new Set(pages.concat(response.data))))
+        let pagesList = response.data
+        pagesList.unshift({ id: '', name: 'all pages'})
+        setPages(pagesList)
       }).catch(err => {
         catchApiErrors(err, setErrors);
       });
