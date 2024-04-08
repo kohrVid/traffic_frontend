@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 import { VisitContext } from '@/components/VisitContext';
-import { DateTimeInput, SelectInput } from '@/components/FormFields';
+import { DateTimeInput, Label, SelectInput } from '@/components/FormFields';
 import { WorldMap } from '@/components/WorldMap';
 import { allPages } from '@/components/api/pages.js';
 import { listVisits } from '@/components/api/visits.js';
 import { catchApiErrors } from '@/components/api/utils.js';
+import styles from '@/components/home.module.scss';
 
 export default function Home() {
   const [pages, setPages] = useState([{ id: '', name: 'all pages'}]);
@@ -52,11 +53,29 @@ export default function Home() {
   return (
     <>
       <h1>View page traffic data</h1>
-      {pages && (pages.length > 0) && (
+    {pages && (pages.length > 0) && (
+      <>
+        <Label htmlFor="pages">
+          Select a page:
+        </Label>
         <SelectInput name="pages" options={pages} onChange={handlePageChange} />
+      </>
       )}
-      <DateTimeInput name="from" onChange={handleFromDateChange} />
-      <DateTimeInput name="to" onChange={handleToDateChange} />
+
+      <div className={styles.row}>
+        <div className={styles.item}>
+          <Label htmlFor="from">
+            From:
+          </Label>
+          <DateTimeInput name="from" onChange={handleFromDateChange} />
+        </div>
+        <div className={styles.item}>
+          <Label htmlFor="to">
+            To:
+          </Label>
+          <DateTimeInput name="to" onChange={handleToDateChange} />
+        </div>
+      </div>
       <WorldMap visits={visits} />
     </>
   );

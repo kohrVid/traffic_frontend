@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styles from './label.module.scss';
 
-export const Label = ({ children, className }) => {
+export const Label = ({ htmlFor, children, className }) => {
   return(
-    <label className={styles.label + " " + className}>
+    <label htmlFor={htmlFor} className={`${styles.label} ${className}`}>
       {children}
     </label>
   );
